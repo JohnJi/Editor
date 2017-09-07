@@ -1,0 +1,414 @@
+@import "http://at.alicdn.com/t/font_2lvay7tba04o0f6r.css";
+
+.ata-editor {
+  font: 16px/1.5 Arial, "Microsoft Yahei";
+  border: 1px solid #CCCCCC;
+  position: relative;
+  min-width: 450px;
+}
+
+.ata-editor .toolbar {
+  box-sizing: border-box;
+  border-bottom: 1px solid #CCC;
+  padding: 3px;
+  background-color: #F5F5F5;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+}
+
+.ata-editor .toolbar .icon-caret {
+  font-size: 12px;    margin-left: 5px;
+}
+
+.ata-editor .toolbar .icon-text-color {
+  border-bottom: 2px solid red;
+  padding-bottom: 2px;
+}
+
+.ata-editor .toolbar .option {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.ata-editor .toolbar .option .cell:nth-child(n+2) {
+  padding-left: 3px;
+  margin-left: 0px;
+  border-left: 1px solid #CCCCCC;
+}
+
+.ata-editor .toolbar .icon-renew {
+  display: inline-block;
+  -webkit-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
+}
+
+.ata-editor .toolbar button {
+  cursor: pointer;
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 3px 5px;
+  border-radius: 3px;
+  outline: 0;
+  margin-right: 3px;
+  min-width: 30px;
+  font: inherit;
+}
+
+.ata-editor .toolbar button:hover, .ata-editor .toolbar button:focus {
+  border-color: #BCBCBC;
+  background-color: #E9E9E9;
+}
+
+.ata-editor .edit-area {
+  /*min-height: 500px;*/
+}
+
+.ata-editor .edit-area iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.ata-editor .menu-uploading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  border-left: 1px solid #CCC;
+  box-shadow: -5px 0 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.ata-editor .menu-uploading .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px 10px;
+  border-bottom: 1px solid #CCC;
+}
+
+.ata-editor .menu-uploading .header h5 {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font: inherit;
+  margin: 0;
+}
+
+.ata-editor .menu-uploading .header a {
+  color: #333;
+}
+
+.ata-editor .menu-uploading .header a:hover {
+  color: #00B9D8;
+  cursor: pointer;
+}
+
+.ata-editor .menu-uploading .body {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+}
+
+.ata-editor .menu-uploading .body .cell {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0 30px;
+}
+
+.ata-editor .menu-uploading .body .cell .holder {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #CCC;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.ata-editor .menu-uploading .body .cell .holder .iconeditor {
+  font-size: 40px;
+  color: #333;
+}
+
+.ata-editor .menu-uploading .body .cell > .info {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 14px;
+}
+
+.ata-editor .menu-uploading .body .cell > .info .file-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.ata-editor .menu-uploading .body .cell > .info .file-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.ata-editor .menu-uploading .body .cell > .info .file-info .detail {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.ata-editor .menu-uploading .body .cell > .info .file-info .opt a {
+  color: #00B9D8;
+  text-decoration: none;
+}
+
+.ata-editor .menu-uploading .body .cell > .info .file-info .opt a:hover {
+  color: #008da5;
+}
+
+.ata-editor .menu-uploading .body .cell > .info .progress[value] {
+  margin-bottom: 0;
+  height: 12px;
+  color: #e2e2e2;
+  background-color: #e2e2e2;
+  width: 100%;
+}
+
+.ata-editor .menu-uploading .body .cell > .info .progress[value]::-webkit-progress-bar {
+  background-color: #e2e2e2;
+}
+
+.ata-editor .menu-uploading .body .cell > .info .progress[value]::-webkit-progress-value {
+  background-color: #00B9D8;
+}
+
+.ata-editor .menu-uploading .body .cell > .info .progress[value]::-moz-progress-bar {
+  background-color: #00B9D8;
+}
+
+.ata-editor .menu-uploading .body .cell > .info .progress[value]::-ms-fill {
+  background-color: #00B9D8;
+}
+
+.ata-editor .menu-popup {
+  position: absolute;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  overflow: hidden;
+}
+
+.ata-editor .menu-popup hr {
+  background-color: #ccc;
+  height: 1px;
+  margin: 0;
+  border: 0;
+}
+
+.ata-editor .menu-popup .list {
+  min-width: 120px;
+}
+
+.ata-editor .menu-popup .list.list-image {
+  max-width: 300px;
+}
+
+.ata-editor .menu-popup .list.list-image .images {
+  text-indent: 10px;
+}
+
+.ata-editor .menu-popup .list.list-image .images > span {
+  display: block;
+  cursor: pointer;
+}
+
+.ata-editor .menu-popup .list.list-image span:first-child:hover {
+  background-color: transparent;
+  color: inherit;
+  cursor: default;
+}
+
+.ata-editor .menu-popup .list > span, .ata-editor .menu-popup .list.list-image > .images > span {
+  padding: 5px 10px;
+  display: block;
+  margin-bottom: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ata-editor .menu-popup .list > span:hover, .ata-editor .menu-popup .list.list-image > .images > span:hover {
+  background-color: #999999;
+  color: white;
+  cursor: pointer;
+}
+
+.ata-editor .menu-popup .list .h1 {
+  font-size: 34px;
+}
+
+.ata-editor .menu-popup .list .h2 {
+  font-size: 30px;
+}
+
+.ata-editor .menu-popup .list .h3 {
+  font-size: 26px;
+}
+
+.ata-editor .menu-popup .list .h4 {
+  font-size: 22px;
+}
+
+.ata-editor .menu-popup .list .h5 {
+  font-size: 18px;
+}
+
+.ata-editor .menu-popup .list .h6 {
+  font-size: 14px;
+}
+
+.ata-editor .menu-popup .color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 120px;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+.ata-editor .menu-popup .color span {
+  width: 20px;
+  height: 20px;
+  margin: 3px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.ata-editor .menu-popup .color span:hover {
+  border-color: #000;
+}
+
+.ata-editor .menu-popup .color .black {
+  background-color: black;
+}
+
+.ata-editor .menu-popup .color .gray {
+  background-color: gray;
+}
+
+.ata-editor .menu-popup .color .silver {
+  background-color: silver;
+}
+
+.ata-editor .menu-popup .color .maroon {
+  background-color: maroon;
+}
+
+.ata-editor .menu-popup .color .red {
+  background-color: red;
+}
+
+.ata-editor .menu-popup .color .fuchsia {
+  background-color: fuchsia;
+}
+
+.ata-editor .menu-popup .color .purple {
+  background-color: purple;
+}
+
+.ata-editor .menu-popup .color .olive {
+  background-color: olive;
+}
+
+.ata-editor .menu-popup .color .navy {
+  background-color: navy;
+}
+
+.ata-editor .menu-popup .color .blue {
+  background-color: blue;
+}
+
+.ata-editor .menu-popup .color .yellow {
+  background-color: yellow;
+}
+
+.ata-editor .menu-popup .color .orange {
+  background-color: orange;
+}
+
+.ata-editor .menu-popup .color .green {
+  background-color: green;
+}
+
+.ata-editor .menu-popup .color .lime {
+  background-color: lime;
+}
+
+.ata-editor .menu-popup .color .teal {
+  background-color: teal;
+}
+
+.ata-editor .menu-popup .color .aqua {
+  background-color: aqua;
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+.edit-area.edit-area-hover{
+    border: 1px dashed #0087F7;
+}
+
+.md-input{
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border: 0;
+}
+.md-preview{
+    padding: 10px;
+}
+
+blockquote {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 40px;
+    -webkit-margin-end: 40px;
+}

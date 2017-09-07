@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="editor.css" media="all">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" media="all">
+    <script type="text/javascript" src="../scripts/jquery.js"></script>
+    <script type="text/javascript" src="../scripts/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="../scripts/marked.min.js"></script>
+</head>
+<body>
+    <div class="ata-editor">
+        <div class="edit-area">
+            <textarea id="ED_Editor" name="content" data-provide="markdown" style="resize: none; display: block;"></textarea>
+        </div>
+    </div>
+    <script type="text/javascript" src="../scripts/editor.js"></script>
+<script type="text/javascript">
+$("#ED_Editor").markdown({
+    ossPath:'',          //ossPath
+    recentFiles:['../images/icon_Apad1.png','../images/icon_Apad2.png','../images/icon_Apad3.png','../images/icon_Apad4.png','../images/icon_Apad5.png'],     //最近上传的 5 张图片
+    uploadPath:"D:/xampp",       //图片上传路径 handle-upload.html
+    editorContent:`### Hello there
+How are you?
+\`I have bellow task for you\` :
+Select from this text...
+
+Click the bold on THIS \`\`\`WORD\`\`\` and make THESE ONE italic
+
+Link GOOGLE to google.com
+
+Test to insert image (and try to tab after write the image description)
+
+Test Preview
+
+And ending here... Click "List"
+
+Enjoy!
+
+| head 1   | head 2   |
+|:--------:|:--------:|
+| col 1    | col 2    |
+`,    //预加载内容
+    width:"",           //编辑器长度 单位（px） 默认 100%
+    height:"300px",          //编辑器高度 单位（px） 默认 100%
+    insertImage:null,    //插入图片的方法名
+    activeClass:"edit-area-hover",  //拖拽文件进入上传区域样式
+    uploadCall:function(file){
+        if (file.size >= (1024 * 1024) || !file.type.match(/.png|.jpg|.JPEG/)) {
+            alert('只支持上传小于 1 MB 的 png、jpg 格式的图片！');
+            return false;
+        }
+        var formData=new FormData();
+        formData.append("myfile",file);
+        var xmlHttp=new XMLHttpRequest();
+        xmlHttp.open("post",this.uploadPath);
+        xmlHttp.send(formData);
+    },  //上传图片方法
+    insertFileCall:function(){
+        console.log('插入图片');
+    },  //插入图片方法 如果此字段为空则不显示插入图片的功能按钮
+});
+</script>
+</body>
+</html>
